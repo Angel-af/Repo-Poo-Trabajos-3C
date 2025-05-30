@@ -31,43 +31,33 @@ public class UsuarioSeguro {
 
             if (Character.isUpperCase(charter)){
                 mayus=true;
-            }
-
-            if (Character.isLowerCase(charter)){
+            }else if (Character.isLowerCase(charter)){
                 lowerCase=true;
-            }
-
-            if (Character.isDigit(charter)){
+            }else if (Character.isDigit(charter)){
                 digit=true;
             }  
-
-
+            
         }
 
         if (mayus == false){
             System.out.println("Tu contraseña debe de incluir mayusculas");
 
-        } 
-        if (lowerCase == false){
+        } else if (lowerCase == false){
             System.out.println("Tu contraseña debe de incluir minusculas");
 
-        }
-        if (digit == false){
+        }else if (digit == false){
             System.out.println("Tu contraseña debe de incluir digitos");
-
         }  
 
         this.password = password;
     }
 
-    public boolean auntetication (String intentPassword){
+    public boolean authenticate (String intentPassword){
 
-        if (intentPassword == password){
-            
-
+        if (this.password == null){
+            return false;
         }
-        return true;
-
+        return this.password.equals(intentPassword);
     }
 
 
