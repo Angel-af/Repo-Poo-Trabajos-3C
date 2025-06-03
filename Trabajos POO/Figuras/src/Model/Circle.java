@@ -1,20 +1,29 @@
 package Model;
 
-public class Circle {
-    private double radio;
+public class Circle extends FigureAbs {
 
-     public void setRadio(double radio) {
-        this.radio = radio;
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
     }
-     public double getRadio() {
-        return radio;
+
+    public double getRadius() {
+        return radius;
     }
-     public double getPerimetro() {
-        return 2*Math.PI*radio;
+
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
-    //Metodo para calcular el area del cuadrado
+
+    @Override
     public double getArea() {
-        
-        return Math.PI*radio*radio;
+        return Math.PI * Math.pow(radius, 2);
     }
+
+    @Override
+    public double getPerimeter() {
+        return (2 * Math.PI) * radius;
+    }
+
 }

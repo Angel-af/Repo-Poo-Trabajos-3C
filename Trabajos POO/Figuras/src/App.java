@@ -1,30 +1,27 @@
-import Model.*;
-
+import Model.Circle;
+import Model.FigureAbs;
+import Model.Square;
+import Model.Triangle;
+import Model.TriangleEquilatero;
+import Model.TriangleEscaleno;
 
 public class App {
-    public static void main(String[] args) {
-        
-        Square square = new Square();
-        Circle circle = new Circle();
-        Triangle triangle = new Triangle();
-        
-        //Inicializar los atributos de cuadrado
-        square.setLado(10);
-        square.setMessage("");
-        //Inicializar los atributos de circulo
-        circle.setRadio(10);
-        //Inicializar los atributos de Triangulo
-        triangle.setBase(10);
-        triangle.setLado(10);
+    public static void main(String[] args) throws Exception {
 
-        //Cuadrado
-        System.out.println("Perimetro del cuadrado: "+square.getPerimetro());
-        System.out.println("Area del cuadrado: "+square.getArea());
-        //Circulo
-        System.out.println("Perimetro del circulo: "+circle.getPerimetro());
-        System.out.println("Area del circulo: "+circle.getArea());
-        //Triangulo
-        System.out.println("Perimetro del triangulo: "+triangle.getPerimetro());
-        System.out.println("Area del triangulo: "+triangle.getArea());
+        FigureAbs sq = new Square(10);
+        FigureAbs cir = new Circle(10);
+        FigureAbs triangle = new Triangle(20, 25, 20);
+        FigureAbs EqTriangle = new TriangleEquilatero(25);
+        FigureAbs EsTriangle = new TriangleEscaleno(13, 14, 15);
+
+        FigureAbs[] figures = { sq, cir, triangle, EqTriangle, EsTriangle };
+
+        for (FigureAbs figureAbs : figures) {
+            System.out.println("La clase es: " + figureAbs.getClass().getSimpleName());
+            System.out.println("El area es: " + figureAbs.getArea());
+            System.out.println("El perimetro es: " + figureAbs.getPerimeter());
+            System.out.println("----------------------------------------------------");
+        }
+
+    }
 }
- }
