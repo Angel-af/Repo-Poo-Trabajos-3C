@@ -22,6 +22,5 @@ public class App {
             System.out.println("El perimetro es: " + figureAbs.getPerimeter());
             System.out.println("----------------------------------------------------");
         }
-
     }
 }
